@@ -82,9 +82,7 @@ function addPagination (list) {
 //search bar function tests searchInput and uses the input to create a new filtered array with which to call a new instance of showPage and addPagination
 function searchFn(searchInput, list) {
    const newArr = list.filter(list =>
-      list.name.first.toLowerCase().includes(searchInput.value.toLowerCase() ) 
-      ||
-      list.name.last.toLowerCase().includes(searchInput.value.toLowerCase() ) 
+      `${list.name.first.toLowerCase()} ${list.name.last.toLowerCase()}`.includes(searchInput.value.toLowerCase() ) 
    );
    if (newArr.length > 0){
       showPage(newArr, 1);
